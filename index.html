@@ -45,6 +45,44 @@
         /* التذييل والحقوق */
         footer { text-align: center; padding: 30px; margin-top: 40px; border-top: 1px solid #ddd; }
         .rights { color: #555; font-weight: bold; font-size: 14px; }
+   /* --- الكود الجديد للقائمة الجانبية --- */
+.menu-icon {
+    display: none; /* مخفية في الكمبيوتر */
+    cursor: pointer;
+    font-size: 30px;
+    color: var(--dark); /* تظهر بلون الموقع الداكن */
+}
+
+/* التنسيق الخاص بالجوال فقط */
+@media (max-width: 768px) {
+    .menu-icon { 
+        display: block; /* تظهر فقط في الجوال */
+    }
+    
+    .nav-container {
+        display: none; /* تختفي الأقسام العادية */
+        flex-direction: column;
+        background: var(--dark);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        z-index: 999;
+        transition: 0.3s;
+    }
+
+    /* عندما تضغط على الزر وتصبح القائمة نشطة */
+    .nav-container.active {
+        display: flex; 
+    }
+
+    .nav-link {
+        padding: 15px;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
     </style>
 </head>
 <body>
