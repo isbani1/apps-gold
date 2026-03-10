@@ -3,271 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تطبيقات ذهبية ١ | الموقع الرسمي</title>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+    <title>تطبيقات الذهبي - الرئيسية</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* تصميم القائمة الجانبية الاحترافية */
-.nav-con@media (max-width: 768px) {
-    /* شريط التنقل العلوي */
-    nav { height: 60px; display: flex; align-items: center; }
-
-    /* القائمة الجانبية - ضبط الخلفية لتكون بيضاء ناصعة */
-    .nav-container {
-        display: flex !important; /* إجبار التنسيق */
-        flex-direction: column;
-        background-color: #ffffff !important; 
-        position: fixed;
-        top: 0;
-        right: -100%; /* مخفية */
-        width: 280px;
-        height: 100vh;
-        z-index: 2000;
-        transition: 0.4s ease-in-out;
-        padding: 20px;
-        box-shadow: -5px 0 15px rgba(0,0,0,0.2);
-    }
-
-    /* عندما تفتح القائمة */
-    .nav-container.active {
-        right: 0 !important;
-    }
-
-    /* الروابط داخل القائمة - نصوص داكنة وواضحة */
-    .nav-link {
-        color: #1e293b !important; /* لون رمادي غامق جداً */
-        padding: 15px 10px !important;
-        text-decoration: none !important;
-        border-bottom: 1px solid #f1f5f9;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        font-size: 16px;
-        text-align: right;
-        width: 100%;
-    }
-
-    /* تغيير لون أول رابط (الرئيسية) ليكون مميزاً */
-    .nav-link:nth-child(2) { 
-        background: #f0fdf4; 
-        color: #10b981 !important; 
-        border-radius: 8px;
-    }
-
-    /* زر الإغلاق X */
-    .close-btn {
-        color: #64748b !important;
-        font-size: 24px;
-        margin-bottom: 20px;
-        cursor: pointer;
-        display: block;
-    }
-
-    /* إيقونة القائمة ☰ في الشريط العلوي */
-    .menu-icon {
-        display: block !important;
-        color: #ffffff !important;
-        font-size: 30px;
-        margin-right: 15px;
-    }
-}
-        @media (max-width: 768px) {
-    .menu-icon {
-        display: block !important; /* إجبارها على الظهور */
-        color: #ffffff !important; /* اللون الأبيض الناصع */
-        font-size: 35px; /* حجم كبير وواضح */
-        cursor: pointer;
-        padding: 5px;
-    }
-    
-    .nav-container {
-        display: none; 
-        flex-direction: column;
-        background: #0f172a; /* لون الخلفية الداكن */
-        position: absolute;
-        top: 65px;
-        left: 0;
-        width: 100%;
-        z-index: 1000;
-        border-top: 1px solid rgba(255,255,255,0.1);
-    }
-    
-    .nav-container.active {
-        display: flex !important;
-    }
-        }
-        :root { --gold: #fbbf24; --dark: #0f172a; --bg: #f4f7f6; }
+        :root { --main: #fbbf24; --bg: #f8fafc; --text: #1e293b; }
         body { background: var(--bg); font-family: 'Tajawal', sans-serif; margin: 0; padding: 0; }
-
-        /* القائمة العلوية - Navbar */
-        nav { background: var(--dark); padding: 10px 0; border-bottom: 3px solid var(--gold); position: sticky; top: 0; z-index: 1000; }
-        .nav-container { max-width: 1000px; margin: 0 auto; display: flex; justify-content: center; gap: 20px; }
-        .nav-link { color: white; text-decoration: none; font-weight: bold; font-size: 14px; padding: 5px 15px; transition: 0.3s; }
-        .nav-link:hover { color: var(--gold); }
-
-        /* الهيدر والشعار */
-        header { background: #fff; padding: 30px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-        .logo { font-size: 35px; font-weight: 900; color: var(--dark); text-decoration: none; }
-        .logo span { color: var(--gold); }
-
-        .container { max-width: 1000px; margin: 30px auto; padding: 0 20px; }
         
-        /* عناوين الأقسام */
-        .section-header { background: var(--dark); color: white; padding: 10px 20px; border-radius: 10px; margin-bottom: 20px; display: inline-block; font-weight: bold; border-right: 5px solid var(--gold); }
+        /* الهيدر ثابت */
+        header { background: #fff; padding: 15px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; border-bottom: 3px solid var(--main); }
+        .logo { font-size: 26px; font-weight: bold; color: var(--main); text-decoration: none; }
 
-        /* شبكة التطبيقات (نمط أبو عرب) */
-        .apps-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; margin-bottom: 50px; }
-        .app-item { background: #fff; border-radius: 15px; padding: 15px; display: flex; align-items: center; text-decoration: none; color: inherit; border: 1px solid #eee; transition: 0.3s; }
-        .app-item:hover { transform: translateY(-5px); border-color: var(--gold); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
-        .app-icon { width: 70px; height: 70px; border-radius: 18px; margin-left: 15px; }
-        .app-meta h3 { font-size: 18px; margin: 0 0 5px 0; color: var(--dark); }
-        .app-meta p { font-size: 12px; color: #777; margin: 0; }
+        .container { max-width: 600px; margin: 20px auto; padding: 0 15px; }
+        
+        /* عنوان القسم */
+        .section-title { font-size: 20px; font-weight: bold; margin-bottom: 20px; color: var(--text); border-right: 4px solid var(--main); padding-right: 10px; }
 
-        /* صندوق التواصل الاجتماعي الاحترافي */
-        .social-box { background: #fff; border-radius: 20px; padding: 25px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-top: 40px; }
-        .social-title { font-weight: bold; margin-bottom: 15px; display: block; color: var(--dark); }
-        .social-icons { display: flex; justify-content: center; gap: 15px; }
-        .s-btn { width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: 0.3s; text-decoration: none; }
-        .s-btn img { width: 25px; height: 25px; filter: brightness(0) invert(1); }
-        .fb { background: #1877F2; } .tg { background: #0088cc; } .yt { background: #ff0000; }
-        .s-btn:hover { transform: scale(1.1) rotate(5deg); opacity: 0.9; }
+        /* روابط المقالات */
+        .post-card { 
+            display: flex; align-items: center; background: #fff; border-radius: 20px; 
+            padding: 15px; margin-bottom: 15px; text-decoration: none; color: inherit; 
+            border: 1px solid #e2e8f0; transition: 0.3s;
+        }
+        .post-card:hover { transform: translateY(-3px); border-color: var(--main); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        
+        .app-icon { width: 65px; height: 65px; border-radius: 18px; margin-left: 15px; background: #f1f5f9; }
+        
+        .post-details h2 { font-size: 17px; margin: 0 0 5px 0; color: #0f172a; }
+        .post-details p { font-size: 13px; color: #64748b; margin: 0; line-height: 1.5; }
 
-        /* التذييل والحقوق */
-        footer { text-align: center; padding: 30px; margin-top: 40px; border-top: 1px solid #ddd; }
-        .rights { color: #555; font-weight: bold; font-size: 14px; }
-   /* --- الكود الجديد للقائمة الجانبية --- */
-.menu-icon {
-    display: none; /* مخفية في الكمبيوتر */
-    cursor: pointer;
-    font-size: 30px;
-    color: var(--dark); /* تظهر بلون الموقع الداكن */
-}
-
-/* التنسيق الخاص بالجوال فقط */
-@media (max-width: 768px) {
-    .menu-icon { 
-        display: block; /* تظهر فقط في الجوال */
-    }
-    
-    .nav-container {
-        display: none; /* تختفي الأقسام العادية */
-        flex-direction: column;
-        background: var(--dark);
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        z-index: 999;
-        transition: 0.3s;
-    }
-
-    /* عندما تضغط على الزر وتصبح القائمة نشطة */
-    .nav-container.active {
-        display: flex; 
-    }
-
-    .nav-link {
-        padding: 15px;
-        border-bottom: 1px solid rgba(255,255,255,0.1);
-        width: 100%;
-        box-sizing: border-box;
-    }
-}
+        .footer { text-align: center; padding: 25px; color: #94a3b8; font-size: 13px; }
     </style>
 </head>
 <body>
-<script>
-    function toggleMenu() {
-        const nav = document.getElementById('navContainer');
-        const overlay = document.getElementById('overlay');
-        nav.classList.toggle('active');
-        overlay.classList.toggle('active');
-    }
-</script>
-    
-    <div class="overlay" id="overlay" onclick="toggleMenu()" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1500;"></div>
 
-<nav style="background: #0f172a; padding: 10px 0; border-bottom: 3px solid #fbbf24; position: sticky; top: 0; z-index: 1000;">
-    <div style="max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px;">
-        
-        <a href="index.html" style="color: white; text-decoration: none; font-weight: bold; font-size: 18px;">تطبيقات ذهبية ١</a>
+<header>
+    <a href="index.html" class="logo">تطبيقات الذهبي</a>
+</header>
 
-        <div class="menu-icon" onclick="toggleMenu()" style="cursor: pointer; font-size: 30px; color: #ffffff;">☰</div>
-        
-        <div class="nav-container" id="navContainer">
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; padding-bottom: 10px; border-bottom: 1px solid #eee;">
-                <span style="font-weight: 900; color: #1e293b; font-size: 18px;">القائمة الرئيسية</span>
-                <div onclick="toggleMenu()" style="font-size: 25px; cursor: pointer; color: #64748b; background: #f1f5f9; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center; border-radius: 50%;">✕</div>
-            </div>
+<div class="container">
+    <h2 class="section-title">أحدث مقالات تويتر الذهبي</h2>
 
-            <a href="index.html" class="nav-link">🏠 الصفحة الرئيسية</a>
-            <a href="index.html#normal-apps" class="nav-link">🗂️ قسم التطبيقات</a>
-            <a href="index.html#gold-apps" class="nav-link">✨ تطبيقات ذهبية</a>
-            
-            <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
-            
-            <div style="font-size: 13px; color: #94a3b8; text-align: center; margin-top: 20px;">
-                إصدار الموقع: 1.0.0
-            </div>
+    <a href="twitter-gold-v1.html" class="post-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/124/124021.png" class="app-icon" alt="تويتر الذهبي">
+        <div class="post-details">
+            <h2>تحميل تويتر الذهبي Twitter Gold (آخر تحديث)</h2>
+            <p>تعرف على مميزات الإصدار الأخير وطريقة التحميل المباشر ضد الحظر...</p>
         </div>
-    </div>
-</nav>
+    </a>
 
-    <header>
-        <a href="index.html" class="logo">تطبيقات <span>ذهبية ١</span></a>
-    </header>
-
-    <div class="container">
-        
-        <div id="gold-apps">
-            <div class="section-header">قسم تطبيقات ذهبية</div>
-            <div class="apps-grid">
-                <a href="twitter-gold.html" class="app-item">
-                    <img src="https://cdn-icons-png.flaticon.com/512/124/124021.png" class="app-icon">
-                    <div class="app-meta"><h3>تويتر الذهبي</h3><p>تحديث مارس 2026 - ضد الحظر</p></div>
-                </a>
-                <a href="#" class="app-item">
-                    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968841.png" class="app-icon">
-                    <div class="app-meta"><h3>واتساب الذهبي</h3><p>إصدار أبو عرب الشهير</p></div>
-                </a>
-                <a href="#" class="app-item">
-                    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" class="app-icon">
-                    <div class="app-meta"><h3>تلجرام الذهبي</h3><p>بميزات حصرية وإخفاء الظهور</p></div>
-                </a>
-                <a href="#" class="app-item">
-                    <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" class="app-icon">
-                    <div class="app-meta"><h3>انستقرام الذهبي</h3><p>تحميل الستوري والصور بضغطة</p></div>
-                </a>
-            </div>
+    <a href="twitter-gold-lite.html" class="post-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/124/124021.png" class="app-icon">
+        <div class="post-details">
+            <h2>تويتر الذهبي لايت - نسخة خفيفة جداً</h2>
+            <p>أفضل نسخة للأجهزة الضعيفة بمساحة صغيرة جداً ومميزات كاملة...</p>
         </div>
+    </a>
 
-        <div id="normal-apps">
-            <div class="section-header">قسم تطبيقات</div>
-            <div class="apps-grid">
-                <a href="#" class="app-item">
-                    <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" class="app-icon">
-                    <div class="app-meta"><h3>تيك توك بلس</h3><p>بدون علامة مائية</p></div>
-                </a>
-                <a href="#" class="app-item">
-                    <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" class="app-icon">
-                    <div class="app-meta"><h3>يوتيوب بدون إعلانات</h3><p>تشغيل في الخلفية</p></div>
-                </a>
-                <a href="#" class="app-item">
-                    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968804.png" class="app-icon">
-                    <div class="app-meta"><h3>فيسبوك لايت المعدل</h3><p>توفير البيانات والبطارية</p></div>
-                </a>
-                <a href="#" class="app-item">
-                    <img src="https://cdn-icons-png.flaticon.com/512/1384/1384031.png" class="app-icon">
-                    <div class="app-meta"><h3>سناب الذهبي</h3><p>حفظ المقاطع بدون علم الطرف الآخر</p></div>
-                </a>
-            </div>
+    <a href="twitter-gold-pro.html" class="post-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/124/124021.png" class="app-icon">
+        <div class="post-details">
+            <h2>تويتر الذهبي برو (بدون إعلانات)</h2>
+            <p>تمتع بتصفح تويتر بدون أي إعلانات ممولة وبخصوصية تامة...</p>
         </div>
-<script>
-        function toggleMenu() {
-            var nav = document.getElementById('navContainer');
-            // هذا السطر هو الذي يظهر ويخفي القائمة عند الضغط
-            nav.classList.toggle('active');
-        }
-    </script>
+    </a>
+
+    <a href="twitter-gold-multi.html" class="post-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/124/124021.png" class="app-icon">
+        <div class="post-details">
+            <h2>تويتر بلس الذهبي - تشغيل حسابين</h2>
+            <p>شرح طريقة تشغيل حسابين تويتر في وقت واحد على هاتف واحد...</p>
+        </div>
+    </a>
+
+    <a href="twitter-gold-dev.html" class="post-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/124/124021.png" class="app-icon">
+        <div class="post-details">
+            <h2>تحديث تويتر الذهبي - إصدار المطورين</h2>
+            <p>مميزات حصرية للمطورين مع ثيمات وألوان ذهبية جديدة...</p>
+        </div>
+    </a>
+
+    <div class="footer">جميع الحقوق محفوظة لموقع تطبيقات الذهبي © 2026</div>
+</div>
+
 </body>
 </html>
