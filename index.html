@@ -1,33 +1,108 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<phpunit backupGlobals="false"
-         backupStaticAttributes="false"
-         bootstrap="vendor/autoload.php"
-         colors="true"
-         convertErrorsToExceptions="true"
-         convertNoticesToExceptions="true"
-         convertWarningsToExceptions="true"
-         processIsolation="false"
-         stopOnFailure="false">
-    <testsuites>
-        <testsuite name="Unit">
-            <directory suffix="Test.php">./tests/Unit</directory>
-        </testsuite>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تطبيقات ذهبية ١ | الموقع الرسمي</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --gold: #fbbf24; --dark: #0f172a; --bg: #f4f7f6; }
+        body { background: var(--bg); font-family: 'Tajawal', sans-serif; margin: 0; padding: 0; }
 
-        <testsuite name="Feature">
-            <directory suffix="Test.php">./tests/Feature</directory>
-        </testsuite>
-    </testsuites>
-    <filter>
-        <whitelist processUncoveredFilesFromWhitelist="true">
-            <directory suffix=".php">./app</directory>
-        </whitelist>
-    </filter>
-    <php>
-        <env name="APP_ENV" value="testing"/>
-        <env name="BCRYPT_ROUNDS" value="4"/>
-        <env name="CACHE_DRIVER" value="array"/>
-        <env name="MAIL_DRIVER" value="array"/>
-        <env name="QUEUE_CONNECTION" value="sync"/>
-        <env name="SESSION_DRIVER" value="array"/>
-    </php>
-</phpunit>
+        /* القائمة العلوية - Navbar */
+        nav { background: var(--dark); padding: 10px 0; border-bottom: 3px solid var(--gold); position: sticky; top: 0; z-index: 1000; }
+        .nav-container { max-width: 1000px; margin: 0 auto; display: flex; justify-content: center; gap: 20px; }
+        .nav-link { color: white; text-decoration: none; font-weight: bold; font-size: 14px; padding: 5px 15px; transition: 0.3s; }
+        .nav-link:hover { color: var(--gold); }
+
+        /* الهيدر والشعار */
+        header { background: #fff; padding: 30px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .logo { font-size: 35px; font-weight: 900; color: var(--dark); text-decoration: none; }
+        .logo span { color: var(--gold); }
+
+        .container { max-width: 1000px; margin: 30px auto; padding: 0 20px; }
+        
+        /* عناوين الأقسام */
+        .section-header { background: var(--dark); color: white; padding: 10px 20px; border-radius: 10px; margin-bottom: 20px; display: inline-block; font-weight: bold; border-right: 5px solid var(--gold); }
+
+        /* شبكة التطبيقات (نمط أبو عرب) */
+        .apps-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; margin-bottom: 50px; }
+        .app-item { background: #fff; border-radius: 15px; padding: 15px; display: flex; align-items: center; text-decoration: none; color: inherit; border: 1px solid #eee; transition: 0.3s; }
+        .app-item:hover { transform: translateY(-5px); border-color: var(--gold); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        .app-icon { width: 70px; height: 70px; border-radius: 18px; margin-left: 15px; }
+        .app-meta h3 { font-size: 18px; margin: 0 0 5px 0; color: var(--dark); }
+        .app-meta p { font-size: 12px; color: #777; margin: 0; }
+
+        /* صندوق التواصل الاجتماعي الاحترافي */
+        .social-box { background: #fff; border-radius: 20px; padding: 25px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-top: 40px; }
+        .social-title { font-weight: bold; margin-bottom: 15px; display: block; color: var(--dark); }
+        .social-icons { display: flex; justify-content: center; gap: 15px; }
+        .s-btn { width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: 0.3s; text-decoration: none; }
+        .s-btn img { width: 25px; height: 25px; filter: brightness(0) invert(1); }
+        .fb { background: #1877F2; } .tg { background: #0088cc; } .yt { background: #ff0000; }
+        .s-btn:hover { transform: scale(1.1) rotate(5deg); opacity: 0.9; }
+
+        /* التذييل والحقوق */
+        footer { text-align: center; padding: 30px; margin-top: 40px; border-top: 1px solid #ddd; }
+        .rights { color: #555; font-weight: bold; font-size: 14px; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-link">الصفحة الرئيسية</a>
+            <a href="#gold-apps" class="nav-link">تطبيقات ذهبية</a>
+            <a href="#normal-apps" class="nav-link">قسم التطبيقات</a>
+        </div>
+    </nav>
+
+    <header>
+        <a href="index.html" class="logo">تطبيقات <span>ذهبية ١</span></a>
+    </header>
+
+    <div class="container">
+        
+        <div id="gold-apps">
+            <div class="section-header">قسم تطبيقات ذهبية</div>
+            <div class="apps-grid">
+                <a href="twitter-gold.html" class="app-item">
+                    <img src="https://cdn-icons-png.flaticon.com/512/124/124021.png" class="app-icon">
+                    <div class="app-meta"><h3>تويتر الذهبي</h3><p>تحديث مارس 2026 - ضد الحظر</p></div>
+                </a>
+                <a href="#" class="app-item">
+                    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968841.png" class="app-icon">
+                    <div class="app-meta"><h3>واتساب الذهبي</h3><p>إصدار أبو عرب الشهير</p></div>
+                </a>
+                <a href="#" class="app-item">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" class="app-icon">
+                    <div class="app-meta"><h3>تلجرام الذهبي</h3><p>بميزات حصرية وإخفاء الظهور</p></div>
+                </a>
+                <a href="#" class="app-item">
+                    <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" class="app-icon">
+                    <div class="app-meta"><h3>انستقرام الذهبي</h3><p>تحميل الستوري والصور بضغطة</p></div>
+                </a>
+            </div>
+        </div>
+
+        <div id="normal-apps">
+            <div class="section-header">قسم تطبيقات</div>
+            <div class="apps-grid">
+                <a href="#" class="app-item">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" class="app-icon">
+                    <div class="app-meta"><h3>تيك توك بلس</h3><p>بدون علامة مائية</p></div>
+                </a>
+                <a href="#" class="app-item">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" class="app-icon">
+                    <div class="app-meta"><h3>يوتيوب بدون إعلانات</h3><p>تشغيل في الخلفية</p></div>
+                </a>
+                <a href="#" class="app-item">
+                    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968804.png" class="app-icon">
+                    <div class="app-meta"><h3>فيسبوك لايت المعدل</h3><p>توفير البيانات والبطارية</p></div>
+                </a>
+                <a href="#" class="app-item">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1384/1384031.png" class="app-icon">
+                    <div class="app-meta"><h3>سناب الذهبي</h3><p>حفظ المقاطع بدون علم الطرف الآخر</p></div>
+                </a>
+            </div>
+        </div>
