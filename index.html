@@ -3,87 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تطبيقات الذهبي - الرئيسية</title>
+    <title>تطبيقات أسامة 40 - الواجهة الرسمية</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root { --main: #fbbf24; --bg: #f8fafc; --text: #1e293b; }
-        body { background: var(--bg); font-family: 'Tajawal', sans-serif; margin: 0; padding: 0; }
+        :root { --main-gold: #fbbf24; --dark-blue: #1e293b; --bg: #f8fafc; }
+        body { background: var(--bg); font-family: 'Tajawal', sans-serif; margin: 0; padding: 0; color: var(--dark-blue); }
         
-        /* الهيدر ثابت */
-        header { background: #fff; padding: 15px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; border-bottom: 3px solid var(--main); }
-        .logo { font-size: 26px; font-weight: bold; color: var(--main); text-decoration: none; }
+        header { background: #fff; padding: 20px; text-align: center; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); border-bottom: 4px solid var(--main-gold); position: sticky; top: 0; z-index: 1000; }
+        .logo { font-size: 28px; font-weight: bold; color: var(--main-gold); text-decoration: none; letter-spacing: 1px; }
 
-        .container { max-width: 600px; margin: 20px auto; padding: 0 15px; }
+        .container { max-width: 800px; margin: 30px auto; padding: 0 15px; }
+        .welcome-msg { text-align: center; margin-bottom: 30px; font-size: 18px; color: #64748b; }
+
+        /* شبكة التطبيقات */
+        .apps-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
         
-        /* عنوان القسم */
-        .section-title { font-size: 20px; font-weight: bold; margin-bottom: 20px; color: var(--text); border-right: 4px solid var(--main); padding-right: 10px; }
-
-        /* روابط المقالات */
-        .post-card { 
-            display: flex; align-items: center; background: #fff; border-radius: 20px; 
-            padding: 15px; margin-bottom: 15px; text-decoration: none; color: inherit; 
-            border: 1px solid #e2e8f0; transition: 0.3s;
+        .app-item { 
+            display: flex; align-items: center; background: #fff; border-radius: 22px; 
+            padding: 18px; text-decoration: none; color: inherit; 
+            border: 1px solid #e2e8f0; transition: all 0.3s ease;
         }
-        .post-card:hover { transform: translateY(-3px); border-color: var(--main); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .app-item:hover { transform: translateY(-5px); border-color: var(--main-gold); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
         
-        .app-icon { width: 65px; height: 65px; border-radius: 18px; margin-left: 15px; background: #f1f5f9; }
-        
-        .post-details h2 { font-size: 17px; margin: 0 0 5px 0; color: #0f172a; }
-        .post-details p { font-size: 13px; color: #64748b; margin: 0; line-height: 1.5; }
+        .app-icon { width: 70px; height: 70px; border-radius: 18px; margin-left: 15px; object-fit: cover; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .app-info h3 { font-size: 18px; margin: 0 0 5px 0; color: #0f172a; }
+        .app-info p { font-size: 13px; color: #64748b; margin: 0; }
 
-        .footer { text-align: center; padding: 25px; color: #94a3b8; font-size: 13px; }
+        /* أيقونات التواصل الاجتماعي */
+        .social-links { text-align: center; margin-top: 50px; display: flex; justify-content: center; gap: 20px; }
+        .social-btn { width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: #fff; border: 1px solid #e2e8f0; text-decoration: none; font-size: 20px; transition: 0.3s; }
+        .social-btn:hover { background: var(--main-gold); color: white; border-color: var(--main-gold); transform: scale(1.1); }
+        
+        /* التذييل */
+        footer { text-align: center; padding: 40px 20px; color: #94a3b8; font-size: 14px; border-top: 1px solid #e2e8f0; margin-top: 40px; }
     </style>
 </head>
 <body>
 
 <header>
-    <a href="index.html" class="logo">تطبيقات الذهبي</a>
+    <a href="index.html" class="logo">تطبيقات أسامة 40</a>
 </header>
 
 <div class="container">
-    <h2 class="section-title">أحدث مقالات تويتر الذهبي</h2>
+    <div class="welcome-msg">أهلاً بك في المتجر الرسمي، اختر تطبيقك المفضل للتحميل</div>
 
-    <a href="twitter-gold-v1.html" class="post-card">
-        <img src="https://cdn-icons-png.flaticon.com/512/124/124021.png" class="app-icon" alt="تويتر الذهبي">
-        <div class="post-details">
-            <h2>تحميل تويتر الذهبي Twitter Gold (آخر تحديث)</h2>
-            <p>تعرف على مميزات الإصدار الأخير وطريقة التحميل المباشر ضد الحظر...</p>
-        </div>
-    </a>
+    <div class="apps-grid">
+        <a href="twitter-gold.html" class="app-item">
+            <img src="https://cdn-icons-png.flaticon.com/512/124/124021.png" class="app-icon">
+            <div class="app-info">
+                <h3>تويتر الذهبي V1</h3>
+                <p>الإصدار الرئيسي بمميزات كاملة</p>
+            </div>
+        </a>
 
-    <a href="twitter-gold-lite.html" class="post-card">
-        <img src="https://cdn-icons-png.flaticon.com/512/124/124021.png" class="app-icon">
-        <div class="post-details">
-            <h2>تويتر الذهبي لايت - نسخة خفيفة جداً</h2>
-            <p>أفضل نسخة للأجهزة الضعيفة بمساحة صغيرة جداً ومميزات كاملة...</p>
-        </div>
-    </a>
+        <a href="twitter-lite.html" class="app-item">
+            <img src="https://cdn-icons-png.flaticon.com/512/124/124021.png" class="app-icon">
+            <div class="app-info">
+                <h3>تويتر الذهبي لايت</h3>
+                <p>نسخة خفيفة للأجهزة الضعيفة</p>
+            </div>
+        </a>
 
-    <a href="twitter-gold-pro.html" class="post-card">
-        <img src="https://cdn-icons-png.flaticon.com/512/124/124021.png" class="app-icon">
-        <div class="post-details">
-            <h2>تويتر الذهبي برو (بدون إعلانات)</h2>
-            <p>تمتع بتصفح تويتر بدون أي إعلانات ممولة وبخصوصية تامة...</p>
-        </div>
-    </a>
+        <a href="#" class="app-item">
+            <img src="https://cdn-icons-png.flaticon.com/512/124/124021.png" class="app-icon">
+            <div class="app-info">
+                <h3>تويتر الذهبي برو</h3>
+                <p>تصفح بدون إعلانات نهائياً</p>
+            </div>
+        </a>
 
-    <a href="twitter-gold-multi.html" class="post-card">
-        <img src="https://cdn-icons-png.flaticon.com/512/124/124021.png" class="app-icon">
-        <div class="post-details">
-            <h2>تويتر بلس الذهبي - تشغيل حسابين</h2>
-            <p>شرح طريقة تشغيل حسابين تويتر في وقت واحد على هاتف واحد...</p>
-        </div>
-    </a>
+        <a href="#" class="app-item">
+            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968841.png" class="app-icon">
+            <div class="app-info">
+                <h3>واتساب الذهبي</h3>
+                <p>تعديلات الخصوصية المتقدمة</p>
+            </div>
+        </a>
 
-    <a href="twitter-gold-dev.html" class="post-card">
-        <img src="https://cdn-icons-png.flaticon.com/512/124/124021.png" class="app-icon">
-        <div class="post-details">
-            <h2>تحديث تويتر الذهبي - إصدار المطورين</h2>
-            <p>مميزات حصرية للمطورين مع ثيمات وألوان ذهبية جديدة...</p>
-        </div>
-    </a>
+        <a href="#" class="app-item">
+            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" class="app-icon">
+            <div class="app-info">
+                <h3>تلجرام الذهبي</h3>
+                <p>مميزات بلس وتخفي الظهور</p>
+            </div>
+        </a>
 
-    <div class="footer">جميع الحقوق محفوظة لموقع تطبيقات الذهبي © 2026</div>
+        <a href="#" class="app-item">
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" class="app-icon">
+            <div class="app-info">
+                <h3>انستقرام الذهبي</h3>
+                <p>تحميل الصور والفيديوهات بضغطة</p>
+            </div>
+        </a>
+
+        <a href="#" class="app-item">
+            <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" class="app-icon">
+            <div class="app-info">
+                <h3>تيك توك الذهبي</h3>
+                <p>بدون علامة مائية وبدون إعلانات</p>
+            </div>
+        </a>
+
+        <a href="#" class="app-item">
+            <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" class="app-icon">
+            <div class="app-info">
+                <h3>يوتيوب الذهبي</h3>
+                <p>تشغيل في الخلفية وتحميل مباشر</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="social-links">
+        <a href="رابط_فيسبوك" class="social-btn" title="فيسبوك">fab fa-facebook</a>
+        <a href="رابط_تلجرام" class="social-btn" title="تلجرام">t</a>
+        <a href="رابط_يوتيوب" class="social-btn" title="يوتيوب">y</a>
+    </div>
+
+    <footer>
+        كل الحقوق محفوظة أسامة 40 / 2026
+    </footer>
 </div>
 
 </body>
