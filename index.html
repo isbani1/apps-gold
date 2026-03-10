@@ -7,65 +7,68 @@
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         /* تصميم القائمة الجانبية الاحترافية */
-.nav-container {
-    display: flex;
-    gap: 20px;
-}
+.nav-con@media (max-width: 768px) {
+    /* شريط التنقل العلوي */
+    nav { height: 60px; display: flex; align-items: center; }
 
-@media (max-width: 768px) {
+    /* القائمة الجانبية - ضبط الخلفية لتكون بيضاء ناصعة */
     .nav-container {
-        display: flex;
+        display: flex !important; /* إجبار التنسيق */
         flex-direction: column;
-        background: #ffffff; /* خلفية بيضاء مثل الصورة */
-        position: fixed; /* ثابتة فوق المحتوى */
+        background-color: #ffffff !important; 
+        position: fixed;
         top: 0;
-        right: -100%; /* مخفية خارج الشاشة جهة اليمين */
+        right: -100%; /* مخفية */
         width: 280px;
         height: 100vh;
         z-index: 2000;
-        transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: 0.4s ease-in-out;
         padding: 20px;
-        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
-        text-align: right;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.2);
     }
 
     /* عندما تفتح القائمة */
     .nav-container.active {
-        right: 0; /* تدخل للشاشة */
+        right: 0 !important;
     }
 
+    /* الروابط داخل القائمة - نصوص داكنة وواضحة */
     .nav-link {
-        color: #334155 !important;
-        padding: 15px;
-        border-radius: 12px;
-        margin-bottom: 5px;
+        color: #1e293b !important; /* لون رمادي غامق جداً */
+        padding: 15px 10px !important;
+        text-decoration: none !important;
+        border-bottom: 1px solid #f1f5f9;
         display: flex;
         align-items: center;
-        gap: 12px; /* مسافة بين الأيقونة والنص */
-        font-weight: bold;
+        gap: 10px;
         font-size: 16px;
+        text-align: right;
+        width: 100%;
     }
 
-    /* لون خلفية للرابط النشط (الرئيسية) */
-    .nav-link:first-child {
-        background: #f0fdf4; /* لون أخضر فاتح مثل الصورة */
-        color: #10b981 !important;
+    /* تغيير لون أول رابط (الرئيسية) ليكون مميزاً */
+    .nav-link:nth-child(2) { 
+        background: #f0fdf4; 
+        color: #10b981 !important; 
+        border-radius: 8px;
     }
 
-    /* طبقة شفافة خلف القائمة لإغلاقها عند الضغط خارجها */
-    .overlay {
-        display: none;
-        position: fixed;
-        top: 0; left: 0; width: 100%; height: 100%;
-        background: rgba(0,0,0,0.4);
-        z-index: 1500;
+    /* زر الإغلاق X */
+    .close-btn {
+        color: #64748b !important;
+        font-size: 24px;
+        margin-bottom: 20px;
+        cursor: pointer;
+        display: block;
     }
-    .overlay.active { display: block; }
-}
 
-/* الأيقونات الصغيرة بجانب النص */
-.nav-link::before {
-    font-size: 20px;
+    /* إيقونة القائمة ☰ في الشريط العلوي */
+    .menu-icon {
+        display: block !important;
+        color: #ffffff !important;
+        font-size: 30px;
+        margin-right: 15px;
+    }
 }
         @media (max-width: 768px) {
     .menu-icon {
