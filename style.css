@@ -77,3 +77,40 @@ body {
     font-size: 13px;
     color: #888;
 }
+/* تنسيق صفحة إعادة التوجيه */
+.redirect-box {
+    max-width: 600px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+.loader-text {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.countdown-number {
+    font-size: 50px;
+    font-weight: 900;
+    color: var(--accent-color);
+    margin: 20px 0;
+}
+
+.final-btn {
+    display: none; /* مخفي في البداية */
+    background: var(--accent-color);
+    color: white;
+    padding: 15px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
