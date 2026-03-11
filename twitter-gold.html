@@ -3,77 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تحميل تويتر الذهبي - تطبيقات ذهبية ١</title>
+    <title>تحميل تويتر الذهبي Twitter Gold 2026 - تطبيقات ذهبية ١</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         :root { --gold: #fbbf24; --dark: #0f172a; --bg: #f4f7f6; }
-        body { background: var(--bg); font-family: 'Tajawal', sans-serif; margin: 0; padding: 0; }
-
-        /* القائمة العلوية الثابتة */
-        nav { background: var(--dark); padding: 10px 0; border-bottom: 3px solid var(--gold); position: sticky; top: 0; z-index: 1000; }
-        .nav-container { max-width: 1000px; margin: 0 auto; display: flex; justify-content: center; gap: 20px; }
-        .nav-link { color: white; text-decoration: none; font-weight: bold; font-size: 14px; padding: 5px 15px; }
-
-        header { background: #fff; padding: 20px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-        .logo { font-size: 30px; font-weight: 900; color: var(--dark); text-decoration: none; }
-        .logo span { color: var(--gold); }
-
-        .container { max-width: 800px; margin: 30px auto; padding: 25px; background: #fff; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+        body { background: var(--bg); font-family: 'Tajawal', sans-serif; margin: 0; padding: 0; overflow-x: hidden; }
         
-        .post-title { font-size: 26px; color: var(--dark); border-bottom: 2px solid var(--gold); padding-bottom: 15px; margin-bottom: 20px; text-align: center; }
+        /* التنسيق الجديد للقائمة الجانبية */
+        .overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1500; }
+        nav { background: var(--dark); padding: 12px 0; border-bottom: 3px solid var(--gold); position: sticky; top: 0; z-index: 1000; }
+        .nav-container { display: flex; gap: 20px; }
         
-        /* الجدول الاحترافي (نمط أبو عرب) */
-        .info-table { width: 100%; border-collapse: collapse; margin: 25px 0; border: 1px solid #eee; }
-        .info-table td { padding: 15px; border: 1px solid #eee; font-size: 15px; }
-        .info-table td:first-child { background: #f9fafb; font-weight: bold; color: #555; width: 35%; }
-        .info-table td:last-child { color: var(--dark); font-weight: bold; }
-
-        /* زر التحميل الذهبي */
-        .download-btn { 
-            display: block; width: 80%; margin: 30px auto; text-align: center; 
-            background: linear-gradient(45deg, var(--gold), #d97706); 
-            color: white; text-decoration: none; padding: 18px; border-radius: 50px; 
-            font-size: 20px; font-weight: bold; box-shadow: 0 10px 20px rgba(251, 191, 36, 0.3);
-            transition: 0.3s;
+        @media (max-width: 768px) {
+            .nav-container { display: flex; flex-direction: column; background: #fff; position: fixed; top: 0; right: -100%; width: 280px; height: 100vh; z-index: 2000; transition: 0.4s; padding: 20px; box-shadow: -5px 0 15px rgba(0,0,0,0.2); }
+            .nav-container.active { right: 0; }
+            .nav-link { color: #1e293b !important; padding: 15px; text-decoration: none; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #eee; }
+            .overlay.active { display: block; }
         }
-        .download-btn:hover { transform: scale(1.03); opacity: 0.9; }
 
-        footer { text-align: center; padding: 30px; margin-top: 40px; border-top: 1px solid #ddd; background: #fff; }
+        header { background: #fff; padding: 30px 20px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .container { max-width: 850px; margin: 30px auto; padding: 25px; background: #fff; border-radius: 20px; box-shadow: 0 4px 25px rgba(0,0,0,0.06); }
+        .post-title { font-size: 28px; color: var(--dark); line-height: 1.4; margin-bottom: 20px; text-align: center; font-weight: 900; }
+        
+        .info-table { width: 100%; border-collapse: collapse; margin: 25px 0; border-radius: 12px; overflow: hidden; border: 1px solid #eee; }
+        .info-table td { padding: 18px; border: 1px solid #eee; font-size: 16px; }
+        .info-table td:first-child { background: #f9fafb; font-weight: bold; color: #555; width: 40%; }
+        
+        .download-btn { display: block; width: 100%; max-width: 400px; margin: 40px auto; text-align: center; background: linear-gradient(45deg, #1d9bf0, #0076bf); color: white; text-decoration: none; padding: 20px; border-radius: 50px; font-size: 22px; font-weight: bold; box-shadow: 0 10px 20px rgba(29, 155, 240, 0.3); transition: 0.3s; }
+        footer { text-align: center; padding: 30px; background: #fff; border-top: 1px solid #ddd; margin-top: 50px; }
     </style>
 </head>
 <body>
 
+    <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
     <nav>
-        <div class="nav-container">
-            <a href="index.html" class="nav-link">الصفحة الرئيسية</a>
-            <a href="index.html#gold-apps" class="nav-link">تطبيقات ذهبية</a>
-            <a href="index.html#normal-apps" class="nav-link">قسم التطبيقات</a>
+        <div style="max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px;">
+            <a href="index.html" style="color: white; text-decoration: none; font-weight: bold; font-size: 20px;">تطبيقات <span>ذهبية ١</span></a>
+            <div class="menu-icon" onclick="toggleMenu()" style="cursor: pointer; font-size: 30px; color: white;">☰</div>
+            
+            <div class="nav-container" id="navContainer">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;" class="mobile-only">
+                    <span style="font-weight: 900; color: #1e293b;">القائمة الرئيسية</span>
+                    <span onclick="toggleMenu()" style="cursor: pointer; font-size: 24px;">✕</span>
+                </div>
+                <a href="index.html" class="nav-link">🏠 الرئيسية</a>
+                <a href="index.html#normal-apps" class="nav-link">🗂️ كل التطبيقات</a>
+                <a href="index.html#gold-apps" class="nav-link">✨ إصدارات ذهبية</a>
+            </div>
         </div>
     </nav>
 
-    <header>
-        <a href="index.html" class="logo">تطبيقات <span>ذهبية ١</span></a>
-    </header>
-
     <div class="container">
-        <h1 class="post-title">تحميل تويتر الذهبي Twitter Gold أحدث إصدار 2026</h1>
+        <h1 class="post-title">تحميل تويتر الذهبي Twitter Gold 2026 أحدث إصدار للأندرويد</h1>
         
-        <p style="line-height: 1.8; color: #444;">يعد تويتر الذهبي من أفضل النسخ المعدلة التي تتيح لك ميزات خصوصية كاملة، مثل تحميل الفيديوهات بضغطة واحدة، وإخفاء مشاهدة الرسائل، وتغيير ثيم التطبيق بالكامل باللون الذهبي.</p>
+        <p style="line-height: 1.9; color: #444; font-size: 17px;">
+            يعتبر <strong>تويتر الذهبي</strong> النسخة المعدلة الأقوى لمنصة (X) حالياً، حيث يمنحك صلاحيات ومميزات لا تتوفر في التطبيق الرسمي. يمكنك من خلاله تحميل الفيديوهات بضغطة زر، وإخفاء جاري الكتابة، وتصفح التغريدات بدون إعلانات مزعجة، مما يوفر لك تجربة استخدام أكثر خصوصية وسلاسة.
+        </p>
+
+        <h3 style="color: var(--dark); border-right: 4px solid var(--gold); padding-right: 15px;">مميزات تطبيق تويتر الذهبي:</h3>
+        <ul style="line-height: 2; color: #555;">
+            <li>تنزيل الفيديوهات والصور بجودة عالية مباشرة.</li>
+            <li>تعطيل الإعلانات الممولة تماماً من الجدول الزمني.</li>
+            <li>ميزة "وضع الشبح" لإخفاء قراءة الرسائل.</li>
+            <li>تخصيص ألوان الواجهة والخطوط بشكل كامل.</li>
+        </ul>
 
         <table class="info-table">
             <tr><td>اسم التطبيق</td><td>Twitter Gold</td></tr>
-            <tr><td>رقم الإصدار</td><td>V1.0.0</td></tr>
-            <tr><td>الحجم</td><td>65 MB</td></tr>
-            <tr><td>التوافق</td><td>Android 5.0+</td></tr>
-            <tr><td>المطور</td><td>تطبيقات ذهبية ١</td></tr>
+            <tr><td>المطور</td><td>تطبيقات ذهبية ١ (إعادة صياغة)</td></tr>
+            <tr><td>الإصدار الحالي</td><td>v4.0.0</td></tr>
+            <tr><td>نظام التشغيل</td><td>Android 5.0+</td></tr>
+            <tr><td>الحجم</td><td>48 ميجابايت</td></tr>
         </table>
 
-        <a href="ضع_رابط_التحميل_هنا" class="download-btn">📥 تحميل مباشر (APK)</a>
+        <a href="#" class="download-btn">📥 توجه لصفحة التحميل المباشر</a>
     </div>
 
     <footer>
-        <div class="rights">كل الحقوق محفوظة أسامة 40 / 2026 ©</div>
+        <p>جميع الحقوق محفوظة لموقع تطبيقات ذهبية ١ © 2026</p>
     </footer>
 
+    <script>
+        function toggleMenu() {
+            document.getElementById('navContainer').classList.toggle('active');
+            document.getElementById('overlay').classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
