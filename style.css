@@ -1,9 +1,10 @@
+/* الألوان والخطوط الأساسية */
 :root {
-    --primary-bg: #f4f7f6;
+    --primary-bg: #f8fafc;
     --card-bg: #ffffff;
-    --text-main: #333;
-    --accent-color: #27ae60; /* اللون الأخضر المميز للواتساب */
-    --shadow: 0 2px 15px rgba(0,0,0,0.05);
+    --text-main: #1e293b;
+    --accent-color: #27ae60;
+    --shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
 body {
@@ -11,111 +12,87 @@ body {
     font-family: 'Tajawal', sans-serif;
     margin: 0;
     direction: rtl;
+    color: var(--text-main);
 }
 
-/* الهيدر البسيط */
+/* الهيدر (رأس الموقع) */
 .header {
     background: #fff;
-    padding: 15px 0;
+    padding: 20px 0;
     text-align: center;
     box-shadow: var(--shadow);
-    border-bottom: 2px solid var(--accent-color);
+    border-bottom: 3px solid var(--accent-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .header h1 {
     margin: 0;
-    font-size: 24px;
+    font-size: 26px;
+    font-weight: 900;
     color: var(--accent-color);
 }
 
-/* شبكة التطبيقات (Grid) */
+/* الحاوية الكبرى للمحتوى */
 .main-container {
     max-width: 1000px;
     margin: 30px auto;
     padding: 0 15px;
 }
 
+/* شبكة التطبيقات (Grid) - المسؤولة عن ترتيب الكروت بجانب بعضها */
 .apps-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: 20px;
+    /* هذا السطر هو الذي يجعل الكروت تأتي بجانب بعضها تلقائياً */
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); 
+    gap: 20px; /* المسافة بين الكروت */
+    padding: 10px 0;
 }
 
-/* كرت التطبيق على ستايل أبو العرب */
+/* تصميم الكرت الواحد */
 .app-item {
     background: var(--card-bg);
-    border-radius: 25px;
+    border-radius: 25px; /* زوايا دائرية مثل أبو العرب */
     padding: 20px 10px;
     text-align: center;
     text-decoration: none;
-    transition: transform 0.2s;
     box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .app-item:hover {
     transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
 }
 
+/* تنسيق الصور (الأيقونات) لتكون موحدة وواضحة */
 .app-item img {
-    width: 80px;         /* حجم ثابت وموحد لكل الأيقونات */
-    height: 80px;        /* طول ثابت */
-    border-radius: 18px; /* حواف دائرية أنيقة */
-    margin-bottom: 12px;
-    object-fit: cover;   /* يمنع تشوه الصورة إذا كانت أبعادها مختلفة */
-    display: block;      /* لضمان التوسيط */
-    margin-left: auto;
-    margin-right: auto;
+    width: 85px;  /* حجم موحد لكل الأيقونات */
+    height: 85px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    object-fit: cover; /* لضمان عدم تشوه الصورة */
 }
 
+/* تنسيق النص تحت الأيقونة */
 .app-item span {
     display: block;
     font-weight: bold;
     color: var(--text-main);
-    font-size: 14px;     /* حجم خط مناسب للهواتف */
+    font-size: 15px;
     line-height: 1.4;
 }
 
-/* التذييل */
+/* التذييل (Footer) */
 .footer {
     text-align: center;
-    padding: 20px;
-    font-size: 13px;
-    color: #888;
+    padding: 40px 20px;
+    font-size: 14px;
+    color: #64748b;
+    border-top: 1px solid #e2e8f0;
+    margin-top: 50px;
 }
-/* تنسيق صفحة إعادة التوجيه */
-.redirect-box {
-    max-width: 600px;
-    margin: 50px auto;
-    background: #fff;
-    padding: 30px;
-    border-radius: 20px;
-    text-align: center;
-    box-shadow: var(--shadow);
-}
-
-.loader-text {
-    font-size: 18px;
-    color: #555;
-    margin-bottom: 20px;
-}
-
-.countdown-number {
-    font-size: 50px;
-    font-weight: 900;
-    color: var(--accent-color);
-    margin: 20px 0;
-}
-
-.final-btn {
-    display: none; /* مخفي في البداية */
-    background: var(--accent-color);
-    color: white;
-    padding: 15px 40px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 20px;
-    animation: fadeIn 0.5s;
-}
-
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
