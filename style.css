@@ -57,17 +57,22 @@ body {
 }
 
 .app-item img {
-    width: 85px;
-    height: 85px;
-    border-radius: 20px;
+    width: 80px;         /* حجم ثابت وموحد لكل الأيقونات */
+    height: 80px;        /* طول ثابت */
+    border-radius: 18px; /* حواف دائرية أنيقة */
     margin-bottom: 12px;
+    object-fit: cover;   /* يمنع تشوه الصورة إذا كانت أبعادها مختلفة */
+    display: block;      /* لضمان التوسيط */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .app-item span {
     display: block;
     font-weight: bold;
     color: var(--text-main);
-    font-size: 15px;
+    font-size: 14px;     /* حجم خط مناسب للهواتف */
+    line-height: 1.4;
 }
 
 /* التذييل */
