@@ -1,0 +1,79 @@
+:root {
+    --primary-bg: #f4f7f6;
+    --card-bg: #ffffff;
+    --text-main: #333;
+    --accent-color: #27ae60; /* اللون الأخضر المميز للواتساب */
+    --shadow: 0 2px 15px rgba(0,0,0,0.05);
+}
+
+body {
+    background-color: var(--primary-bg);
+    font-family: 'Tajawal', sans-serif;
+    margin: 0;
+    direction: rtl;
+}
+
+/* الهيدر البسيط */
+.header {
+    background: #fff;
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: var(--shadow);
+    border-bottom: 2px solid var(--accent-color);
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 24px;
+    color: var(--accent-color);
+}
+
+/* شبكة التطبيقات (Grid) */
+.main-container {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 15px;
+}
+
+.apps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 20px;
+}
+
+/* كرت التطبيق على ستايل أبو العرب */
+.app-item {
+    background: var(--card-bg);
+    border-radius: 25px;
+    padding: 20px 10px;
+    text-align: center;
+    text-decoration: none;
+    transition: transform 0.2s;
+    box-shadow: var(--shadow);
+}
+
+.app-item:hover {
+    transform: translateY(-5px);
+}
+
+.app-item img {
+    width: 85px;
+    height: 85px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+}
+
+.app-item span {
+    display: block;
+    font-weight: bold;
+    color: var(--text-main);
+    font-size: 15px;
+}
+
+/* التذييل */
+.footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 13px;
+    color: #888;
+}
