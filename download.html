@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جاري تحضير الرابط... | تطبيقات ذهبية ١</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <h1>تطبيقات ذهبية ١</h1>
+    </header>
+
+    <div class="main-container">
+        <div class="redirect-box">
+            <img src="https://cdn-icons-png.flaticon.com/512/3524/3524659.png" width="80" alt="loading">
+            <h2 id="status-text">جاري فحص وتجهيز الرابط المباشر...</h2>
+            <p class="loader-text">فضلاً انتظر قليلاً، نحن نضمن لك روابط آمنة وسريعة.</p>
+            
+            <div class="countdown-number" id="timer">15</div>
+
+            <a href="#" id="direct-link" class="final-btn">اضغط هنا للتحميل المباشر 📥</a>
+        </div>
+    </div>
+
+    <script>
+        let count = 15;
+        const timerElement = document.getElementById('timer');
+        const statusText = document.getElementById('status-text');
+        const downloadBtn = document.getElementById('direct-link');
+
+        // جلب رابط التحميل الحقيقي من "الرابط" (URL)
+        const urlParams = new URLSearchParams(window.location.search);
+        const finalUrl = urlParams.get('url'); 
+
+        const countdown = setInterval(() => {
+            count--;
+            timerElement.textContent = count;
+
+            if (count <= 0) {
+                clearInterval(countdown);
+                timerElement.style.display = 'none';
+                statusText.textContent = "الرابط جاهز الآن!";
+                downloadBtn.style.display = 'inline-block';
+                // نضع الرابط الحقيقي في الزر
+                downloadBtn.href = finalUrl ? finalUrl : "#"; 
+            }
+        }, 1000);
+    </script>
+
+</body>
+</html>
