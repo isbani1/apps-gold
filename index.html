@@ -3,126 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تطبيقات أسامة 40 - الواجهة الرسمية</title>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        :root { --main-gold: #fbbf24; --dark-blue: #1e293b; --bg: #f8fafc; }
-        body { background: var(--bg); font-family: 'Tajawal', sans-serif; margin: 0; padding: 0; color: var(--dark-blue); }
-        
-        header { background: #fff; padding: 20px; text-align: center; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); border-bottom: 4px solid var(--main-gold); position: sticky; top: 0; z-index: 1000; }
-        .logo { font-size: 28px; font-weight: bold; color: var(--main-gold); text-decoration: none; letter-spacing: 1px; }
-
-        .container { max-width: 800px; margin: 30px auto; padding: 0 15px; }
-        .welcome-msg { text-align: center; margin-bottom: 30px; font-size: 18px; color: #64748b; }
-
-        /* شبكة التطبيقات */
-        .apps-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
-        
-        .app-item { 
-            display: flex; align-items: center; background: #fff; border-radius: 22px; 
-            padding: 18px; text-decoration: none; color: inherit; 
-            border: 1px solid #e2e8f0; transition: all 0.3s ease;
-        }
-        .app-item:hover { transform: translateY(-5px); border-color: var(--main-gold); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
-        
-        .app-icon { width: 70px; height: 70px; border-radius: 18px; margin-left: 15px; object-fit: cover; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
-        .app-info h3 { font-size: 18px; margin: 0 0 5px 0; color: #0f172a; }
-        .app-info p { font-size: 13px; color: #64748b; margin: 0; }
-
-        /* أيقونات التواصل الاجتماعي */
-        .social-links { text-align: center; margin-top: 50px; display: flex; justify-content: center; gap: 20px; }
-        .social-btn { width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: #fff; border: 1px solid #e2e8f0; text-decoration: none; font-size: 20px; transition: 0.3s; }
-        .social-btn:hover { background: var(--main-gold); color: white; border-color: var(--main-gold); transform: scale(1.1); }
-        
-        /* التذييل */
-        footer { text-align: center; padding: 40px 20px; color: #94a3b8; font-size: 14px; border-top: 1px solid #e2e8f0; margin-top: 40px; }
-    </style>
+    <title>تطبيقات ذهبية ١ | الموقع الرسمي</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-    <a href="index.html" class="logo">تطبيقات أسامة 40</a>
-</header>
+    <header class="header">
+        <h1>تطبيقات ذهبية ١</h1>
+    </header>
 
-<div class="container">
-    <div class="welcome-msg">أهلاً بك في المتجر الرسمي، اختر تطبيقك المفضل للتحميل</div>
+    <div class="main-container">
+        <div class="apps-grid">
+            
+            <a href="whatsapp-gold.html" class="app-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="واتساب الذهبي">
+                <span>واتساب الذهبي</span>
+            </a>
 
-    <div class="apps-grid">
-        <a href="twitter-gold.html" class="app-item">
-            <img src="https://cdn-icons-png.flaticon.com/512/124/124021.png" class="app-icon">
-            <div class="app-info">
-                <h3>تويتر الذهبي V1</h3>
-                <p>الإصدار الرئيسي بمميزات كاملة</p>
+            <a href="twitter-gold.html" class="app-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Logo_of_Twitter.svg" alt="تويتر الذهبي">
+                <span>تويتر الذهبي</span>
+            </a>
+
+            <a href="insta-gold.html" class="app-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="انستقرام الذهبي">
+                <span>انستقرام الذهبي</span>
+            </a>
+
             </div>
-        </a>
-
-        <a href="twitter-lite.html" class="app-item">
-            <img src="https://cdn-icons-png.flaticon.com/512/124/124021.png" class="app-icon">
-            <div class="app-info">
-                <h3>تويتر الذهبي لايت</h3>
-                <p>نسخة خفيفة للأجهزة الضعيفة</p>
-            </div>
-        </a>
-
-        <a href="#" class="app-item">
-            <img src="https://cdn-icons-png.flaticon.com/512/124/124021.png" class="app-icon">
-            <div class="app-info">
-                <h3>تويتر الذهبي برو</h3>
-                <p>تصفح بدون إعلانات نهائياً</p>
-            </div>
-        </a>
-
-        <a href="#" class="app-item">
-            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968841.png" class="app-icon">
-            <div class="app-info">
-                <h3>واتساب الذهبي</h3>
-                <p>تعديلات الخصوصية المتقدمة</p>
-            </div>
-        </a>
-
-        <a href="#" class="app-item">
-            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" class="app-icon">
-            <div class="app-info">
-                <h3>تلجرام الذهبي</h3>
-                <p>مميزات بلس وتخفي الظهور</p>
-            </div>
-        </a>
-
-        <a href="#" class="app-item">
-            <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" class="app-icon">
-            <div class="app-info">
-                <h3>انستقرام الذهبي</h3>
-                <p>تحميل الصور والفيديوهات بضغطة</p>
-            </div>
-        </a>
-
-        <a href="#" class="app-item">
-            <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" class="app-icon">
-            <div class="app-info">
-                <h3>تيك توك الذهبي</h3>
-                <p>بدون علامة مائية وبدون إعلانات</p>
-            </div>
-        </a>
-
-        <a href="#" class="app-item">
-            <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" class="app-icon">
-            <div class="app-info">
-                <h3>يوتيوب الذهبي</h3>
-                <p>تشغيل في الخلفية وتحميل مباشر</p>
-            </div>
-        </a>
     </div>
 
-    <div class="social-links">
-        <a href="رابط_فيسبوك" class="social-btn" title="فيسبوك">fab fa-facebook</a>
-        <a href="رابط_تلجرام" class="social-btn" title="تلجرام">t</a>
-        <a href="رابط_يوتيوب" class="social-btn" title="يوتيوب">y</a>
-    </div>
-
-    <footer>
-        كل الحقوق محفوظة أسامة 40 / 2026
+    <footer class="footer">
+        <p>جميع الحقوق محفوظة لموقع تطبيقات ذهبية ١ © 2026</p>
     </footer>
-</div>
 
 </body>
 </html>
